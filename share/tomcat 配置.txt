@@ -1,0 +1,23 @@
+1、添加管理用户 conf/tomcat-users.xml
+<user username="admin" password="admin" roles="manager-gui,admin-gui"/>
+
+2、配置 tomcat 使用 JavaSE 8 编译 JSP
+在 JspServlet 下添加
+<init-param>
+	<param-name>compilerSourceVM</param-name>
+	<param-value>1.8</param-value>
+</init-param>
+<init-param>
+	<param-name>compilerTargetVM</param-name>
+	<param-value>1.8</param-value>
+</init-param>
+
+3、配置tomcat JSP编译器，tomcat 默认使用 eclipse 编译器，下面配置可以改成使用 JDK 编译
+1)前提条件安装 ant、jdk
+2)在 JspServlet 下添加
+<init-param>
+	<param-name>compiler</param-name>
+	<param-value>modern</param-value>
+</init-param>
+3)配置CLASSPATH
+%JAVA_HOME%\lib\tools.jar;%ANT_HOME%\lib\ant.jar;%ANT_HOME%\lib\ant-launcher.jar;

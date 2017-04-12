@@ -1,0 +1,23 @@
+1、代码自动提示
+Window -> Preferences -> Java -> Editor -> Content Assist -> Auto Activation
+delay是自动弹出提示框的延时时间，我们可以修改成100毫秒；triggers这里默认是"."，
+只要加上"abcdefghijklmnopqrstuvwxyz"或者"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"，
+
+2、字体和大小
+Window -> Preferences -> General -> Appearance -> Content Assist -> Colors and Fornts，只需修改 Basic 里面的 Text Font 就可以了
+
+3、设置文本文件及JSP文件编码
+Window -> Preferences -> General -> Workspace -> Text file encoding -> Other：
+Window -> Preferences -> Web -> JSP Files -> Text file encoding-> Other：
+
+4、设置JDK本地JavaDOC API路径及源码路径
+Window -> Preferences -> Java -> Installed JREs -> Edit：
+选中设置好的JRE目录，编辑，然后全选 JRE system libraries 下的所有Jar包，点击右边的 Source Attachment；
+External location 下，选中JDK安装目录下的  src.zip 文件，一路OK 下来。
+
+5、设置Servlet源码或其它Jar包源码
+tomcat 官网下载源码
+
+6、properties文件中文乱码设置
+Eclipse打开properties文件时，中文会显示乱码，这是因为properties文件默认编码方式是iso8859-1，将其修改为utf-8后，就可以正常显示了：
+Window -> Preferences -> General -> Content Types -> Text -> Java Properties File -> UTF-8 -> Update -> OK
