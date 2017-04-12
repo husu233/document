@@ -1,0 +1,13 @@
+1、
+如 B 依赖 A
+   C 依赖 B
+
+C > B > A C间接依赖A
+使用下面配置可以的排除间接依赖
+<!-- 排除依赖传递列表 -->
+<exclusions>
+	<exclusion>
+		<groupId>
+		<artifactId>
+	</exclusion>
+</exclusions>

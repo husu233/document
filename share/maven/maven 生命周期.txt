@@ -1,0 +1,15 @@
+1、maven生命周期
+clean 清理项目
+	pre-clean 执行清理前的工作
+	clean 清理上一次构建生成的所有文件
+	post-clean 执行清理后的文件
+default  构建项目
+	compile test package install
+site 生成项目站点
+	pre-site 在生成项目前要完成的工作
+	site 生成项目的站点文档
+	post-site 在生成项目站点后要完成的工作
+	site-deploy 发布生成的站点到服务器上
+	
+maven的命令是互相依赖的，比如执行 package，maven会依次调用 clean、compile、test
+clean、compile、test、package、install

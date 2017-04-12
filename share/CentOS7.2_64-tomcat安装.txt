@@ -1,0 +1,15 @@
+1、上传文件
+Xshell 下使用 rz 命令上传文件
+（如果找不 rz 命令，则先安装 yum install lrzsz）
+
+2、解压文件
+使用命令 tar -xzvf file 解压文件 
+
+3、启用服务
+%TOMCAT_HOME%/bin/startup.sh 
+
+4、访问
+1) 外网访问
+
+2) 外网访问不成功可以在服务器上使用 curl localhost:8080 查看是否访问正常,
+如果服务器上访问正常则查看是否是外网端口或防火墙未开放

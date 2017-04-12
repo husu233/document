@@ -1,0 +1,3 @@
+1、下载 jar 包
+2、 使用下面命令添加 jar 包到库中
+mvn install:install-file -Dfile=c:\kaptcha-{version}.jar -DgroupId=com.google.code -DartifactId=kaptcha -Dversion={version} -Dpackaging=jar

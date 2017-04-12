@@ -1,0 +1,21 @@
+1、在 setting.xml 下添加如下内容
+1)Java.net资源库
+<repositories>
+	<repository>
+	    <id>java.net</id>
+	    <url>https://maven.java.net/content/repositories/public/</url>
+	</repository>
+</repositories>
+
+2)JBoss Maven存储库
+<repositories>
+    <repository>
+		<id>JBoss repository</id>
+		<url>http://repository.jboss.org/nexus/content/groups/public/</url>
+    </repository>
+</repositories>
+
+Maven的依赖库查询顺序
+1、在 Maven 本地资源库中搜索，如果没有找到，进入第 2 步，否则退出。
+2、在 Maven 中央存储库搜索，如果没有找到，进入第 3 步，否则退出。
+3、在java.net Maven的远程存储库搜索，如果没有找到，提示错误信息，否则退出。

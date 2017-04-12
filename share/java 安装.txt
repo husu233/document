@@ -1,0 +1,6 @@
+1、去 oracle 官网下载 java 安装包
+
+2、安装
+
+2、安装完成后在系统变量中配置 JAVA_HOME 变量（JAVA_HOME 变量指向 java 安装目录），
+在 PATH 变量中添加 %JAVA_HOME%\bin（配置这个后，可以在 cmd 的任何地方使用 bin 目录下的程序）

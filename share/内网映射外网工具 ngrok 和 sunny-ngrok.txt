@@ -1,0 +1,20 @@
+1、ngrok
+
+1)介绍
+ngrok 是一种内外网映射工具，它可以将本地主机映射到外网域名上
+
+2)使用
+*1 下载 ngrok
+*2 打开 ngrok.exe，输入命令 ngrok http 80，连接成功后获取外网域名
+*3 由于 ngrok 是使用国外服务器提供服务，在网络不稳定时可以使用下面的 sunny-ngrok，
+另外 ngrok 每次重连时都会更新外网域名
+
+2、sunny-ngrok 
+
+1)登录 sunny-ngrok 官网注册 https://www.ngrok.cc/
+
+2)在 sunny 管理后台开通隧道
+
+3)下载对应系统的 sunny 程序
+
+4)启动 sunny 输入隧道 id，隧道 id 可以在 sunny 控制后台获取

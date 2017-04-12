@@ -1,0 +1,31 @@
+1、使用 ScheduleExecutorService 实现定时任务
+
+1)ScheduleExecutorService 接口的两个方法介绍
+
+*1
+command：执行线程
+initialDelay：初始化延时
+period：两次开始执行最小间隔时间
+unit：计时单位
+
+public ScheduledFuture<?> scheduleAtFixedRate(Runnable command,  
+            long initialDelay,  
+            long period,  
+            TimeUnit unit);
+
+*2
+command：执行线程
+initialDelay：初始化延时
+period：前一次执行结束到下一次执行开始的间隔时间（间隔执行延迟时间）
+unit：计时单位
+			
+public ScheduledFuture<?> scheduleWithFixedDelay(Runnable command,  
+                long initialDelay,  
+                long delay,  
+                TimeUnit unit);  
+				
+*3 示例
+//启动定时任务定时获取 access_token (90分钟获取一次)
+ScheduledExecutorService newScheduledThreadPool = Executors.newScheduledThreadPool(2);
+newScheduledThreadPool.scheduleAtFixedRate(new AccessTokenControl(), 0, 90, TimeUnit.MINUTES);
+(执行定时任务的类需要继承 TimerTask 实现 run 方法)

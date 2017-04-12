@@ -1,0 +1,151 @@
+1、创建 web 项目
+$ mvn archetype:generate -DgroupId=com.yiibai -DartifactId=CounterWebApp -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false
+
+2、web 项目结构
+.|____CounterWebApp
+||____pom.xml
+||____src
+|||____main
+||||____resources
+||||____webapp
+|||||____index.jsp
+|||||____WEB-INF
+||||||____web.xml
+
+web.xml – Servlet 2.3 已经比较旧, 建议升级到2.5
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" ><web-app><display-name>Archetype Created Web Application</display-name></web-app>
+ 
+ 3、Eclipse 支持
+ 进入项目目录执行 mvn eclipse:eclipse -Dwtpversion=2.0
+ (-Dwtpversion=2.0 告诉 Maven 将项目转换到 Eclipse 的 Web 项目(WAR)，而不是默认的Java项目(JAR))
+ 
+ 4、更新POM
+ 1)配置版本信息
+ <properties>
+	<jdk.version>1.7</jdk.version>
+	<spring.version>4.1.1.RELEASE</spring.version>
+	<jstl.version>1.2</jstl.version>
+	<junit.version>4.11</junit.version>
+	<logback.version>1.0.13</logback.version>
+	<jcl-over-slf4j.version>1.7.5</jcl-over-slf4j.version>
+</properties>
+
+2)配置 jar 包依赖
+<dependencies>
+	<!-- Unit Test -->
+	<dependency>
+		<groupId>junit</groupId>
+		<artifactId>junit</artifactId>
+		<version>${junit.version}</version>
+	</dependency>
+
+	<!-- Spring Core -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-core</artifactId>
+		<version>${spring.version}</version>
+		<exclusions>
+			<exclusion>
+				<groupId>commons-logging</groupId>
+				<artifactId>commons-logging</artifactId>
+			</exclusion>
+		</exclusions>
+	</dependency>
+
+	<dependency>
+		<groupId>org.slf4j</groupId>
+		<artifactId>jcl-over-slf4j</artifactId>
+		<version>${jcl-over-slf4j.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>ch.qos.logback</groupId>
+		<artifactId>logback-classic</artifactId>
+		<version>${logback.version}</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-web</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-webmvc</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<!-- jstl -->
+	<dependency>
+		<groupId>jstl</groupId>
+		<artifactId>jstl</artifactId>
+		<version>${jstl.version}</version>
+	</dependency>
+</dependencies>
+
+3)配置插件
+<build>
+	<finalName>CounterWebApp</finalName>
+
+	<plugins>
+		<!-- Eclipse project -->
+	  <plugin>
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-eclipse-plugin</artifactId>
+		<version>2.9</version>
+		<configuration>
+			<!-- Always download and attach dependencies source code -->
+			<downloadSources>true</downloadSources>
+			<downloadJavadocs>false</downloadJavadocs>
+			<!-- Avoid type mvn eclipse:eclipse -Dwtpversion=2.0 -->
+			<wtpversion>2.0</wtpversion>
+		</configuration>
+	  </plugin>
+
+	  <!-- Set JDK Compiler Level -->
+	  <plugin>
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-compiler-plugin</artifactId>
+		<version>2.3.2</version>
+		<configuration>
+			<source>${jdk.version}</source>
+			<target>${jdk.version}</target>
+		</configuration>
+	  </plugin>
+
+	  <!-- For Maven Tomcat Plugin -->
+	  <plugin>
+		<groupId>org.apache.tomcat.maven</groupId>
+		<artifactId>tomcat7-maven-plugin</artifactId>
+		<version>2.2</version>
+		<configuration>
+			<path>/CounterWebApp</path>
+		</configuration>
+	  </plugin>
+	</plugins>
+</build>
+
+4)执行 mvn eclipse:eclipse 更新项目，结构如下
+.
+|____pom.xml
+|____src
+| |____main
+| | |____java
+| | | |____com
+| | | | |____yiibai
+| | | | | |____controller
+| | | | | | |____BaseController.java
+| | |____resourcesmvn tomcat:run
+| | | |____logback.xml
+| | |____webapp
+| | | |____WEB-INF
+| | | | |____mvc-dispatcher-servlet.xml
+| | | | |____pages
+| | | | | |____index.jsp
+| | | | |____web.xml
+
+5) 运行 java web 项目
+mvn tomcat:run 或者使用 mvn eclipse:eclipse
+(使用 mvn package 可以打包项目)
+

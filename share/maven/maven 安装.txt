@@ -1,0 +1,9 @@
+1、前提条件
+电脑中已安装 jdk >>> ../<java 安装.txt>
+
+2、下载解压
+
+3、配置系统变量 M2_HOME 指向 maven 目录，配置 Path 变量添加 %M2_HOME%\bin 
+
+4、验证
+cmd 输入命令 mvn -version，查看是否正常

@@ -1,0 +1,17 @@
+1、上传文件
+Xshell 下使用 rz 命令上传文件
+（如果找不 rz 命令，则先安装 yum install lrzsz）
+
+2、解压文件
+使用命令 tar -xzvf file 解压文件 
+
+3、配置环境变量
+1)配置文件路径 /etc/profile
+
+2)在 /etc/profile 追加下面内容
+export JAVA_HOME=/home/jdk1.8.0_121
+exprot PATH=$PATH:$JAVA_HOME/bin
+
+3)使用命令 source /etc/profile 加载修改后的配置
+
+4、使用 java -version 查看是否正确安装

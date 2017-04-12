@@ -1,0 +1,12 @@
+1、在 setting.xml 下添加
+<dependencies>
+    <dependency>
+	<groupId>log4j</groupId>
+	<artifactId>log4j</artifactId>
+	<version>1.2.14</version>
+    </dependency>
+</dependencies>
+
+当 Maven 编译或构建会自动下载 jar 到本地仓库
+
+2、相关 jar 包的 Maven 坐标可以在 http://mvnrepository.com/ Maven中心仓库中查找

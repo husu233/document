@@ -1,0 +1,13 @@
+1、设置 Http 代理，突破防火墙
+
+2、在 %M2_HOME%/conf/settings.xml 添加如下配置
+	<proxy>
+      <id>optional</id>
+      <active>true</active>
+      <protocol>http</protocol>
+      <username>yiibai</username>
+      <password>password</password>
+      <host>proxy.yiibai.com</host>
+      <port>8888</port>
+      <nonProxyHosts>local.net|some.host.com</nonProxyHosts>
+    </proxy>

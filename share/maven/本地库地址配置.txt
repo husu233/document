@@ -1,0 +1,2 @@
+1、在 {M2_HOME}\conf\setting.xml 中添加下面配置
+<localRepository>path</localRepository>

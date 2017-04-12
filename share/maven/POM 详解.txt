@@ -1,0 +1,18 @@
+1、例子
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+   http://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+   <groupId>com.companyname.project-group</groupId>
+   <artifactId>project</artifactId>
+   <version>1.0</version>
+<project>
+
+groupId 项目组
+artifactId 项目名
+
+2、超级pom
+1)所有 pom 继承自父类，父类中包含默认配置
+2)查看默认配置
+在项目下执行 mvn help:effective-pom 

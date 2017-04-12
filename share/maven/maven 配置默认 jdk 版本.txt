@@ -1,0 +1,26 @@
+在settings.xml中修改
+<profile>   
+    <id>jdk1.6</id>    
+    <activation>   
+        <activeByDefault>true</activeByDefault>    
+        <jdk>1.6</jdk>   
+    </activation>    
+    <properties>   
+        <maven.compiler.source>1.6</maven.compiler.source>    
+        <maven.compiler.target>1.6</maven.compiler.target>    
+        <maven.compiler.compilerVersion>1.6</maven.compiler.compilerVersion>   
+    </properties>   
+</profile> 
+或者在pom.xml中修改
+<build>  
+    <plugins>  
+        <plugin>  
+            <groupId>org.apache.maven.plugins</groupId>  
+            <artifactId>maven-compiler-plugin</artifactId>  
+            <configuration>  
+                <source>1.6</source>  
+                <target>1.6</target>  
+            </configuration>  
+        </plugin>  
+    </plugins>  
+</build>  

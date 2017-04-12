@@ -1,0 +1,5 @@
+ProcessDeptInfo 10004/10014
+WeixinWebServiceServiceImpl hic address
+HzfwhAuthenticationEntryPoint 用户认证
+open_id ps_patient_bind.FBIND_USER_NO 
+localhost:8080/pspwebV1/wxfwh/jumpIndexPage?redirect=/pages/zsyt/my_info_menu.html&code=abc&orgId=10004

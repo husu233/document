@@ -1,0 +1,48 @@
+1、使用下面的命令创建 java 项目
+mvn archetype:generate -DgroupId={project-packaging} -DartifactId={project-name}-DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+2、maven java项目结构
+NumberGenerator
+   |-src
+   |---main
+   |-----java
+   |-------com
+   |---------yiibai   
+   |-----------App.java
+   |---test
+   |-----java
+   |-------com
+   |---------yiibai
+   |-----------AppTest.java
+   |-resources
+   |-pom.xml
+   
+3、将 maven 项目转换成 eclipse maven 项目
+1)进入项目目录执行命令 mvn eclipse:eclipse
+2)使用 eclipse 导入项目
+
+4、修改默认 pom.xml 配置
+1)修改编译版本
+ <plugin>
+	<groupId>org.apache.maven.plugins</groupId>
+	<artifactId>maven-compiler-plugin</artifactId>
+	<version>2.3.2</version>
+	<configuration>
+		<source>1.6</source>
+		<target>1.6</target>
+	</configuration>
+</plugin>
+
+2)修改 Junit 版本
+<dependency>
+	<groupId>junit</groupId>
+	<artifactId>junit</artifactId>
+	<version>4.11</version>
+	<scope>test</scope>
+</dependency>
+
+3)在 cmd 中使用 mvn eclipse:eclipse 可以下载依赖
+
+5、在 cmd 中使用 mvn package 打包项目
+
+ 

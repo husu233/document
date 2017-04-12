@@ -1,0 +1,20 @@
+
+1、maven 将编译范围分成三种 
+编译、测试、运行
+
+2、<sope>中的范围配置
+compile 默认范围，编译测试运行都有效
+provided 在测试和编译时有效，如 Servlet API
+reuntime 在测试和运行时有效，如 JDBC 实现 API
+test 只有在测试时有效，如 junit
+system 在测试和编译时有效，与系统相关联，可移植性差
+import	导入范围，它只使用在 dependencyManagement 中，表示从其它的pom中导入dependecy的配置
+下面配置表示将 maven-A 坐标中 pom 的 dependecy 配置导入到本项目中
+<dependency>
+	<groupId>maven</groupId>
+	<artifactId>A</artifactId>
+	<version>1.0</version>
+	<type>pom</type>
+	<scope>import</scope>
+</dependency>
+

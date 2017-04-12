@@ -1,0 +1,19 @@
+需求 修改查询报告单信息 功能
+
+1)项目 
+tzsyt
+pspweb
+
+2)程序入口
+localhost:8080/pspwebV1/wxfwh/jumpIndexPage?redirect=/pages/zsyt/report_users.html&code=abc&orgId=10014
+点击 查询报告信息
+
+3)转换器地址设置
+全文检索 zsyt
+
+4)数据库
+211.149.154.41:3306
+username : admin_all
+password : mDFd#Ez.2822
+
+5)cxf 框架
